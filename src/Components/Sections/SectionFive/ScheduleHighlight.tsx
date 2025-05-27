@@ -36,7 +36,7 @@ import 'slick-carousel/slick/slick-theme.css';
 
 const ScheduleHighlight = () => {
   return (
-      <Box sx={{ bgcolor: '#f5f5f5', }}>
+      <Box sx={{ bgcolor: '#f5f5f5', pt: 4}}>
     <Container>
       <Typography variant="h4" align="center" gutterBottom sx={{ fontWeight: 'bold', mb: 6 }}>
         Event Schedule
