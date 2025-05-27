@@ -33,7 +33,7 @@ export default function Home() {
 
         
         <ScheduleHighlight />
-        <WhyAttend />
+        {/* <WhyAttend /> */}
         {/* <FeaturedAttractions /> */}
         <Testimonials />
         <VendorHighlights />
