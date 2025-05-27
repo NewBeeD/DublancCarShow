@@ -11,10 +11,12 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 
 export default function NavBar() {
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  // Explicitly type the anchorEl state as HTMLElement | null
+  const [anchorEl, setAnchorEl] = React.useState<HTMLElement | null>(null);
   const open = Boolean(anchorEl);
 
-  const handleMenuOpen = (event) => {
+  // Add type annotation for the event parameter
+  const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
 
