@@ -4,6 +4,10 @@ import styles from '../../../Styles/MainSection/MainSection.module.css'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 
+import CountdownTimer from './CountDownTimer';
+
+import Link from 'next/link';
+
 export default function MainSection() {
   return (
     <Box sx={{ position: 'relative', height: '100vh', width: '100vw' }}>
@@ -55,13 +59,16 @@ export default function MainSection() {
           <Typography 
           component="div" 
           sx={{ fontWeight: 'bold', mb: 2, fontSize: {xs: '40px', sm: '80px'} }}>
-            Car Show 2025
+            Aug 31st, 2025
           </Typography>
 
 
           <Typography sx={{ fontSize: {xs: '30px', sm: '60px'} }}>
-            Dublanc
+            Almond Park, Dublanc
           </Typography>
+
+
+          <CountdownTimer />
         </Box>
       </Box>
     </Box>
