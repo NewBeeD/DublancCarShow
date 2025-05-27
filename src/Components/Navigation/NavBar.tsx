@@ -27,7 +27,7 @@ export default function NavBar() {
   return (
     <Box>
       <AppBar 
-        position="fixed"
+        position="sticky"
         elevation={0}
         sx={{
           background: 'transparent',
