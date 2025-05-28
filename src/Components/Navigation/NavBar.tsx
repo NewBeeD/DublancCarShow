@@ -24,7 +24,7 @@ export default function NavBar() {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleMenuClose = (page) => {
+  const handleMenuClose = (page: string) => {
     setAnchorEl(null);
     router.push(`/${page}`)
   };

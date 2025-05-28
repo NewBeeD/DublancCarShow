@@ -1,4 +1,4 @@
-import { Box, Typography, Grid, Button, IconButton, Container } from '@mui/material';
+import { Box, Typography, Button, IconButton, Container, Stack } from '@mui/material';
 import { DirectionsCar, MusicNote, Brush, EmojiEvents, Groups, Facebook, Instagram, Twitter } from '@mui/icons-material';
 
 export default function AboutPage() {
@@ -20,8 +20,13 @@ export default function AboutPage() {
 
         {/* Event Description */}
         <Box mb={10}>
-          <Grid container spacing={6}>
-            <Grid item xs={12} md={6}>
+          <Stack 
+            direction={{ xs: 'column', md: 'row' }} 
+            spacing={6}
+            justifyContent="space-between"
+            alignItems="flex-start"
+          >
+            <Box sx={{ flex: 1 }}>
               <Typography variant="h3" gutterBottom sx={{ fontWeight: 700 }}>
                 Fueling Caribbean Car Culture
               </Typography>
@@ -31,8 +36,8 @@ export default function AboutPage() {
                 What began as a local meetup has accelerated into a full-throttle festival of 
                 mechanical artistry and sonic innovation.
               </Typography>
-            </Grid>
-            <Grid item xs={12} md={6}>
+            </Box>
+            <Box sx={{ flex: 1 }}>
               <Typography variant="h3" gutterBottom sx={{ fontWeight: 700 }}>
                 More Than Just Metal
               </Typography>
@@ -41,8 +46,8 @@ export default function AboutPage() {
                 and engine roars harmonize with island rhythms. From jaw-dropping lowriders to 
                 earth-shaking sound systems, every element is a tribute to automotive creativity.
               </Typography>
-            </Grid>
-          </Grid>
+            </Box>
+          </Stack>
         </Box>
 
         {/* Event Highlights */}
@@ -50,7 +55,14 @@ export default function AboutPage() {
           <Typography variant="h2" align="center" gutterBottom sx={{ mb: 6, fontWeight: 900 }}>
             Festival Pillars
           </Typography>
-          <Grid container spacing={4}>
+          <Box
+            sx={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              justifyContent: 'center',
+              gap: 4
+            }}
+          >
             {[
               { icon: <DirectionsCar fontSize="large" />, title: 'Custom Builds', text: '200+ Bespoke Vehicles' },
               { icon: <MusicNote fontSize="large" />, title: 'Sound Wars', text: '50,000W+ Systems' },
@@ -58,8 +70,11 @@ export default function AboutPage() {
               { icon: <EmojiEvents fontSize="large" />, title: 'Competitions', text: '15 Trophy Categories' },
               { icon: <Groups fontSize="large" />, title: 'Community', text: '10,000+ Enthusiasts' },
             ].map((item) => (
-              <Grid item xs={12} sm={6} md={4} key={item.title}>
-                <Box sx={{ 
+              <Box 
+                key={item.title}
+                sx={{ 
+                  flex: { xs: '0 0 100%', sm: '0 0 calc(50% - 32px)', md: '0 0 calc(33.333% - 32px)' },
+                  maxWidth: { xs: '100%', sm: 'calc(50% - 32px)', md: 'calc(33.333% - 32px)' },
                   p: 4, 
                   border: '2px solid', 
                   borderColor: 'divider', 
@@ -69,14 +84,14 @@ export default function AboutPage() {
                     transform: 'translateY(-5px)',
                     boxShadow: 3
                   }
-                }}>
-                  <Box sx={{ color: 'primary.main', mb: 2 }}>{item.icon}</Box>
-                  <Typography variant="h5" gutterBottom>{item.title}</Typography>
-                  <Typography color="text.secondary">{item.text}</Typography>
-                </Box>
-              </Grid>
+                }}
+              >
+                <Box sx={{ color: 'primary.main', mb: 2 }}>{item.icon}</Box>
+                <Typography variant="h5" gutterBottom>{item.title}</Typography>
+                <Typography color="text.secondary">{item.text}</Typography>
+              </Box>
             ))}
-          </Grid>
+          </Box>
         </Box>
 
         {/* Organizers Section */}
