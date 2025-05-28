@@ -1,6 +1,8 @@
 import { Box, Typography, Button, IconButton, Container, Stack } from '@mui/material';
 import { DirectionsCar, MusicNote, Brush, EmojiEvents, Groups, Facebook, Instagram, Twitter } from '@mui/icons-material';
 
+import Link from 'next/link';
+
 export default function AboutPage() {
   return (
     <Box sx={{ bgcolor: 'background.paper', pt: 8, pb: 8 }}>
@@ -111,21 +113,29 @@ export default function AboutPage() {
 
         {/* CTA Section */}
         <Box textAlign="center">
-          <Button 
-            variant="contained" 
-            size="large" 
-            sx={{ 
-              px: 6, 
-              py: 2, 
-              fontSize: '1.2rem',
-              transition: 'transform 0.3s',
-              '&:hover': {
-                transform: 'scale(1.05)'
-              }
-            }}
-          >
-            Register Today
-          </Button>
+
+
+            <Button 
+             component="a"
+              href='https://docs.google.com/forms/d/e/1FAIpQLSeDF9XjWOUC5D22Ggd8iWKdcMC73H_fM2HBOnQHXPh5jZUqMg/viewform?usp=header'
+              target="_blank"
+              rel="noopener noreferrer"
+              variant='contained' 
+
+              sx={{ 
+                px: 6, 
+                py: 2, 
+                fontSize: '1.2rem',
+                transition: 'transform 0.3s',
+                '&:hover': {
+                  transform: 'scale(1.05)'
+                }
+              }}
+            >
+              Register Today
+            </Button>
+          
+     
           
           <Box mt={4}>
             <IconButton color="primary" sx={{ mx: 1 }}>

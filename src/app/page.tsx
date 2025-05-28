@@ -33,11 +33,11 @@ export default function Home() {
       <Box component="main" sx={{ flex: 1 }}>
 
         <CountdownTimer />
+        <FeaturedAttractions />
         <ScheduleHighlight />
         {/* <WhyAttend /> */}
-        {/* <FeaturedAttractions /> */}
-        <Testimonials />
         <VendorHighlights />
+        <Testimonials />
         <NewsLetterSignup />
 
       </Box>

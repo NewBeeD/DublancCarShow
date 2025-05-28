@@ -1,43 +1,26 @@
-import { Container, Typography, Box, Button, Avatar, Stack } from '@mui/material';
+// src/Components/Sections/VendorHighlight/VendorHighlights.tsx
+import { Container, Typography } from '@mui/material';
+import SliderComponent from './SliderComponent';
 
 const VendorHighlights = () => {
+  const slides = [
+    { image: '/CreditUnion.png', title: 'CCCUL' },
+    { image: '/FreshMarket.png', title: 'Fresh Market' },
+    { image: '/SecretBay.png', title: 'Secret Bay' }
+  ];
+
   return (
-    <Container sx={{ py: 8 }}>
-      <Typography variant="h4" align="center" gutterBottom sx={{ fontWeight: 'bold', mb: 6 }}>
-        Our Sponsors
+    <Container sx={{ py: 4 }}>
+      <Typography variant="h4" align="center" gutterBottom sx={{ 
+        fontWeight: 'bold', 
+        mb: 6, 
+        color: 'white',
+        textShadow: '2px 2px 4px rgba(0,0,0,0.7)'
+      }}>
+        Sponsors
       </Typography>
-      <Stack
-        direction="row"
-        spacing={4}
-        justifyContent="center"
-        alignItems="center"
-        flexWrap="wrap"
-        useFlexGap
-        sx={{
-          gap: { xs: 4, md: 8 },
-          padding: { xs: 2, md: 0 }
-        }}
-      >
-        {['alpine', 'pioneer', 'jbl', 'sony'].map((brand) => (
-          <Avatar
-            key={brand}
-            src={`/${brand}-logo.png`}
-            sx={{ 
-              width: 120, 
-              height: 120, 
-              bgcolor: 'white', 
-              p: 2,
-              m: 1 // Add margin for better spacing on wrap
-            }}
-            variant="square"
-          />
-        ))}
-      </Stack>
-      <Box sx={{ textAlign: 'center', mt: 4 }}>
-        <Button variant="outlined" color="warning" size="large">
-          Become an Exhibitor
-        </Button>
-      </Box>
+      
+      <SliderComponent slides={slides} />
     </Container>
   );
 }

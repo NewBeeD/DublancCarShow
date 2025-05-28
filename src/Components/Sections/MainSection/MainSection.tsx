@@ -10,6 +10,17 @@ import CountdownTimer from '../CountDownTimer/CountDownTimer';
 import Link from 'next/link';
 
 export default function MainSection() {
+
+
+
+
+  const registerationForm = () => {
+
+    
+  }
+
+
+
   return (
     <Box sx={{ position: 'relative', height: '100vh', width: '100vw' }}
     >
@@ -95,19 +106,24 @@ export default function MainSection() {
           <Box>
 
             <Button 
+              component="a"
+              href='https://docs.google.com/forms/d/e/1FAIpQLSeDF9XjWOUC5D22Ggd8iWKdcMC73H_fM2HBOnQHXPh5jZUqMg/viewform?usp=header'
+              target="_blank"
+              rel="noopener noreferrer"
               variant='contained'
-              color='error' 
+              color='error'
               sx={{
-                
                 width: {xs: '160px'},
                 height: {xs: '60px'},
                 fontSize: {xs: '14px', sm: '18px'},
                 fontWeight: 900,
                 lineHeight: {xs:'25px'},
                 letterSpacing: {xs: '4px'}
-              }}>
+              }}
+            >
               Register Today
             </Button>
+
           </Box>
 
 
