@@ -38,16 +38,16 @@ const ScheduleHighlight = () => {
   return (
       <Box sx={{ bgcolor: '#f5f5f5', pt: 4}}>
     <Container>
-      <Typography variant="h4" align="center" gutterBottom sx={{ fontWeight: 'bold', mb: 6 }}>
+      <Typography variant="h4" align="center" gutterBottom sx={{ fontWeight: 'bold', mb: 1 }}>
         Event Schedule
       </Typography>
       <List sx={{ maxWidth: 600, margin: '0 auto' }}>
         {[
-          { day: 'Friday', time: '6 PM - 10 PM', event: 'VIP Preview Night' },
-          { day: 'Saturday', time: '10 AM - 8 PM', event: 'Main Show & Competitions' },
-          { day: 'Sunday', time: '9 AM - 5 PM', event: 'Family Day' }
+          { day: 'Friday', time: '10 PM - 2 AM', event: 'Fish Night' },
+          { day: 'Saturday', time: '8 PM - 1 AM', event: 'Soca Night' },
+          { day: 'Sunday', time: '12 PM - 6 PM', event: 'Main Show & Competitions' }
         ].map((item) => (
-          <ListItem key={item.day} sx={{ bgcolor: 'white', mb: 2, borderRadius: 2 }}>
+          <ListItem key={item.day} sx={{ bgcolor: 'white', mb: 1, borderRadius: 2 }}>
             <ListItemIcon sx={{ color: '#ff5722' }}>
               <EventAvailable />
             </ListItemIcon>

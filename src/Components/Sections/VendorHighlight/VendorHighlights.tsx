@@ -4,7 +4,7 @@ const VendorHighlights = () => {
   return (
     <Container sx={{ py: 8 }}>
       <Typography variant="h4" align="center" gutterBottom sx={{ fontWeight: 'bold', mb: 6 }}>
-        Featured Brands
+        Our Sponsors
       </Typography>
       <Stack
         direction="row"

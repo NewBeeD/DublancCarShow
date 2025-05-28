@@ -1,11 +1,26 @@
 /* MainSection.module.css */
 .MainVideo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  min-width: 100%;
-  min-height: 100%;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: object-position 0.5s ease-in-out;
+  
+  /* Default mobile positioning */
+  object-position: center 30%;
+
+  /* Responsive positioning */
+  @media (min-width: 600px) {
+    object-position: center 40%;
+  }
+  @media (min-width: 960px) {
+    object-position: center 50%;
+  }
+  @media (min-width: 1280px) {
+    object-position: center 60%;
+  }
+  @media (min-width: 1920px) {
+    object-position: center 10%;
+  }
 }
 
 
@@ -37,9 +52,45 @@
   color: #666;
 }
 
-/* Add responsive video scaling if needed */
-@media (max-width: 768px) {
-  .MainVideo {
-    object-position: 50% 30%;
+
+/* Start of color gradient for DriveFest */
+/* TextGradient.module.css */
+.gradientText {
+  font-weight: bold;
+  margin-bottom: 2rem;
+  font-size: 60px;
+  
+  /* Simplified gradient with fewer color stops */
+  background: linear-gradient(
+    90deg,
+    #FF6B6B 0%,
+    #FFE66D 25%,
+    #4ECDC4 50%,
+    #45B7D1 75%,
+    #FF6B6B 100%
+  );
+  background-size: 200% 100%;
+  animation: gradient 8s linear infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  
+  /* Performance optimizations */
+  will-change: background-position;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+@media (min-width: 600px) {
+  .gradientText {
+    font-size: 80px;
   }
 }
+
+/* Simplified animation */
+@keyframes gradient {
+  0% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* End of Drive Fest */

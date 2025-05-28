@@ -53,56 +53,75 @@ const CountdownTimer = () => {
   return (
 
     <Box
-    marginTop={{ xs: 4}}>
+    marginTop={{ xs: 3}}
+    paddingBottom={{xs: 4}}    
+    >
 
-      <Stack 
-      direction='row'
-       sx={{ border: '1px solid black', height: {xs: '90px', sm: '120px'}}}
-       justifyContent='space-evenly'
-       alignItems='center'>
-        
-        
-        <Stack direction='column'>
+      <Box
+      width={{ xs: '90%'}}
+      margin='auto'
+      >
 
-          <Typography sx={{ fontSize: {xs: '30px', sm: '60px'}}}>{timeLeft.days}</Typography>
-          <Typography>Days</Typography>
+        <Box>
+
+          <Typography variant='h5' textAlign='center'>
+            Count Down Till Event
+          </Typography>
+        </Box>
+
+        <Stack 
+        direction='row'
+        sx={{ border: '1px solid black', height: {xs: '90px', sm: '120px'}}}
+        justifyContent='space-evenly'
+        alignItems='center'>
+          
+          
+          <Stack direction='column'>
+
+            <Typography sx={{ fontSize: {xs: '30px', sm: '60px'}}}>{timeLeft.days}</Typography>
+            <Typography>Days</Typography>
+
+          </Stack>
+
+          <Divider orientation="vertical" variant="middle" flexItem />
+
+          
+          
+          <Stack direction='column'>
+
+            <Typography sx={{ fontSize: {xs: '30px', sm: '60px'}}}>{timeLeft.hours}</Typography>
+            <Typography>Hours</Typography>
+
+          </Stack>
+
+          <Divider orientation="vertical" variant="middle" flexItem />
+
+          
+          
+          <Stack direction='column'>
+
+            <Typography sx={{ fontSize: {xs: '30px', sm: '60px'}}}>{timeLeft.minutes}</Typography>
+            <Typography>Minutes</Typography>
+
+          </Stack>
+
+          <Divider orientation="vertical" variant="middle" flexItem />
+
+          
+          
+          <Stack direction='column'>
+
+            <Typography sx={{ fontSize: {xs: '30px', sm: '60px'}}}>{timeLeft.seconds}</Typography>
+            <Typography>Seconds</Typography>
+
+          </Stack>
 
         </Stack>
 
-        <Divider orientation="vertical" variant="middle" flexItem />
 
-        
-        
-        <Stack direction='column'>
 
-          <Typography sx={{ fontSize: {xs: '30px', sm: '60px'}}}>{timeLeft.hours}</Typography>
-          <Typography>Hours</Typography>
+      </Box>
 
-        </Stack>
-
-        <Divider orientation="vertical" variant="middle" flexItem />
-
-        
-        
-        <Stack direction='column'>
-
-          <Typography sx={{ fontSize: {xs: '30px', sm: '60px'}}}>{timeLeft.minutes}</Typography>
-          <Typography>Minutes</Typography>
-
-        </Stack>
-
-        <Divider orientation="vertical" variant="middle" flexItem />
-
-        
-        
-        <Stack direction='column'>
-
-          <Typography sx={{ fontSize: {xs: '30px', sm: '60px'}}}>{timeLeft.seconds}</Typography>
-          <Typography>Seconds</Typography>
-
-        </Stack>
-
-      </Stack>
 
 
     </Box>

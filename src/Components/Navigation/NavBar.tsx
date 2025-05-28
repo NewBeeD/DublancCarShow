@@ -10,18 +10,23 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 
+import { useRouter } from 'next/navigation'
+
 export default function NavBar() {
   // Explicitly type the anchorEl state as HTMLElement | null
   const [anchorEl, setAnchorEl] = React.useState<HTMLElement | null>(null);
   const open = Boolean(anchorEl);
+
+  const router = useRouter()
 
   // Add type annotation for the event parameter
   const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleMenuClose = () => {
+  const handleMenuClose = (page) => {
     setAnchorEl(null);
+    router.push(`/${page}`)
   };
 
   return (
@@ -56,17 +61,16 @@ export default function NavBar() {
                 'aria-labelledby': 'menu-button',
               }}
             >
-              <MenuItem onClick={handleMenuClose}>Home</MenuItem>
-              <MenuItem onClick={handleMenuClose}>Schedule</MenuItem>
-              <MenuItem onClick={handleMenuClose}>Attractions</MenuItem>
-              <MenuItem onClick={handleMenuClose}>Contact</MenuItem>
-              <MenuItem onClick={handleMenuClose}>FAQs</MenuItem>
-              <MenuItem onClick={handleMenuClose}>About</MenuItem>
+              <MenuItem onClick={() => handleMenuClose('')}>Home</MenuItem>
+              <MenuItem onClick={() => handleMenuClose('about')}>About</MenuItem>
+              <MenuItem onClick={() => handleMenuClose('reistration')}>Registration</MenuItem>
+              <MenuItem onClick={() => handleMenuClose('briefing')}>Briefing</MenuItem>
+              
             </Menu>
           </div>
 
           <Typography variant="h6" component="div">
-            Car Show 2025
+            DriveFest
           </Typography>
           
         </Toolbar>
