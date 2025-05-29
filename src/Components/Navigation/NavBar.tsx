@@ -9,25 +9,23 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-
 import { useRouter } from 'next/navigation'
 
 export default function NavBar() {
-  // Explicitly type the anchorEl state as HTMLElement | null
   const [anchorEl, setAnchorEl] = React.useState<HTMLElement | null>(null);
   const open = Boolean(anchorEl);
+  const router = useRouter();
 
-  const router = useRouter()
-
-  // Add type annotation for the event parameter
   const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleMenuClose = (page: string) => {
+  // New: Only close the menu (no navigation)
+  const handleMenuClose = () => {
     setAnchorEl(null);
-    router.push(`/${page}`)
   };
+
+
 
   return (
     <Box>
@@ -56,23 +54,22 @@ export default function NavBar() {
               id="basic-menu"
               anchorEl={anchorEl}
               open={open}
-              onClose={handleMenuClose}
+              onClose={handleMenuClose}  
               MenuListProps={{
                 'aria-labelledby': 'menu-button',
               }}
             >
-              <MenuItem onClick={() => handleMenuClose('')}>Home</MenuItem>
-              <MenuItem onClick={() => handleMenuClose('about')}>About</MenuItem>
-              <MenuItem onClick={() => handleMenuClose('reistration')}>Registration</MenuItem>
-              <MenuItem onClick={() => handleMenuClose('briefing')}>Briefing</MenuItem>
-              
+              {/* Updated: Use navigation handler for items */}
+              <MenuItem onClick={() => router.push('/')}>Home</MenuItem>
+              <MenuItem onClick={() => router.push('/about')}>About</MenuItem>
+              <MenuItem onClick={() => router.push('/registration')}>Registration</MenuItem>
+              <MenuItem onClick={() => router.push('/briefing')}>Briefing</MenuItem>
             </Menu>
           </div>
 
           <Typography variant="h6" component="div">
             DriveFest
           </Typography>
-          
         </Toolbar>
       </AppBar>
     </Box>

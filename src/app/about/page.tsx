@@ -45,15 +45,67 @@ export default function AboutPage() {
               </Typography>
               <Typography paragraph sx={{ fontSize: '1.1rem' }}>
                 We're a moving canvas where custom paint jobs tell stories, basslines become heartbeats, 
-                and engine roars harmonize with island rhythms. From jaw-dropping lowriders to 
-                earth-shaking sound systems, every element is a tribute to automotive creativity.
+                and engine roars harmonize with island rhythms. From show-stopping custom builds to 
+                earth-shaking sound systems, every element is a tribute to automotive creativity in Dominica.
+              </Typography>
+            </Box>
+          </Stack>
+        </Box>
+
+        {/* NEW: Competition Categories Section */}
+        <Box mb={10}>
+          <Typography variant="h2" align="center" gutterBottom sx={{ mb: 6, fontWeight: 900 }}>
+            Competition Categories
+          </Typography>
+          <Stack direction={{ xs: 'column', md: 'row' }} spacing={4}>
+            {/* Sound Off Category */}
+            <Box sx={{ 
+              flex: 1, 
+              p: 4, 
+              border: '2px solid', 
+              borderColor: 'divider', 
+              borderRadius: 2,
+              backgroundColor: 'rgba(25, 118, 210, 0.05)'
+            }}>
+              <Typography variant="h4" color="primary" gutterBottom sx={{ fontWeight: 700 }}>
+                Sound Off
+              </Typography>
+              <Typography variant="body1" paragraph sx={{ fontWeight: 500, color: 'text.secondary' }}>
+                Judged separately for inside and outside systems:
+              </Typography>
+              <Box component="ul" sx={{ pl: 2.5, typography: 'body1' }}>
+                <Typography component="li" sx={{ mb: 1 }}>Cleanest sound quality</Typography>
+                <Typography component="li" sx={{ mb: 1 }}>Cleanest installation</Typography>
+                <Typography component="li">Loudest system (measured with dB meter)</Typography>
+              </Box>
+            </Box>
+
+            {/* Car Show Category */}
+            <Box sx={{ 
+              flex: 1, 
+              p: 4, 
+              border: '2px solid', 
+              borderColor: 'divider', 
+              borderRadius: 2,
+              backgroundColor: 'rgba(25, 118, 210, 0.05)'
+            }}>
+              <Typography variant="h4" color="primary" gutterBottom sx={{ fontWeight: 700 }}>
+                Car Show
+              </Typography>
+              <Box component="ul" sx={{ pl: 2.5, typography: 'body1' }}>
+                <Typography component="li" sx={{ mb: 1 }}>Cleanest engine bay</Typography>
+                <Typography component="li" sx={{ mb: 1 }}>Loudest exhaust</Typography>
+                <Typography component="li">Best overall (judged by point system)</Typography>
+              </Box>
+              <Typography variant="body2" sx={{ mt: 2, fontStyle: 'italic', color: 'text.secondary' }}>
+                Overall judging considers interior, exterior, and engine bay
               </Typography>
             </Box>
           </Stack>
         </Box>
 
         {/* Event Highlights */}
-        <Box mb={10}>
+        {/* <Box mb={10}>
           <Typography variant="h2" align="center" gutterBottom sx={{ mb: 6, fontWeight: 900 }}>
             Festival Pillars
           </Typography>
@@ -94,7 +146,7 @@ export default function AboutPage() {
               </Box>
             ))}
           </Box>
-        </Box>
+        </Box> */}
 
         {/* Organizers Section */}
         <Box textAlign="center" mb={10}>
@@ -113,29 +165,24 @@ export default function AboutPage() {
 
         {/* CTA Section */}
         <Box textAlign="center">
-
-
-            <Button 
-             component="a"
-              href='https://docs.google.com/forms/d/e/1FAIpQLSeDF9XjWOUC5D22Ggd8iWKdcMC73H_fM2HBOnQHXPh5jZUqMg/viewform?usp=header'
-              target="_blank"
-              rel="noopener noreferrer"
-              variant='contained' 
-
-              sx={{ 
-                px: 6, 
-                py: 2, 
-                fontSize: '1.2rem',
-                transition: 'transform 0.3s',
-                '&:hover': {
-                  transform: 'scale(1.05)'
-                }
-              }}
-            >
-              Register Today
-            </Button>
-          
-     
+          <Button 
+            component="a"
+            href='https://docs.google.com/forms/d/e/1FAIpQLSeDF9XjWOUC5D22Ggd8iWKdcMC73H_fM2HBOnQHXPh5jZUqMg/viewform?usp=header'
+            target="_blank"
+            rel="noopener noreferrer"
+            variant='contained' 
+            sx={{ 
+              px: 6, 
+              py: 2, 
+              fontSize: '1.2rem',
+              transition: 'transform 0.3s',
+              '&:hover': {
+                transform: 'scale(1.05)'
+              }
+            }}
+          >
+            Register Today
+          </Button>
           
           <Box mt={4}>
             <IconButton color="primary" sx={{ mx: 1 }}>
